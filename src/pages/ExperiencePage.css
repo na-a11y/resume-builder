@@ -1,0 +1,39 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.experience h2 {
+  font-size: 2rem;
+  color: #0d1b2a;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  padding: 15px 20px;
+  font-size: 1rem;
+  color: #1d72b8;
+  background-color: #ffffff;
+  border: 2px solid #1d72b8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #1d72b8;
+  color: #ffffff;
+}
