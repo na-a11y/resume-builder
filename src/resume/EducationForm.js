@@ -15,12 +15,13 @@ const EducationForm = ({ onNext, onBack, updateData }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    setFormData((prevData) => {
+      const updatedData = { ...prevData, [name]: value };
+      updateData(updatedData); // Call updateData with updated form data
+      return updatedData;
     });
-    updateData(formData);
   };
+  
 
   const handleClear = () => {
     setFormData({

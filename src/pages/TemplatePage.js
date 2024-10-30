@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import './TemplatePage.css';
 
 const templates = [
-  { id: 1, title: 'Template 1', image: 'template1.png', withPhoto: true, columns: 1 },
-  { id: 2, title: 'Template 2', image: 'template2.png', withPhoto: false, columns: 2 },
-  { id: 3, title: 'Template 3', image: 'template3.png', withPhoto: true, columns: 2 },
-  { id: 4, title: 'Template 4', image: 'template4.png', withPhoto: false, columns: 1 },
-  { id: 5, title: 'Template 5', image: 'template5.png', withPhoto: true, columns: 1 },
-  { id: 6, title: 'Template 6', image: 'template6.png', withPhoto: false, columns: 2 },
+  { id: 1, title: 'Template 1', image: 'https://cdn.enhancv.com/predefined-examples/DuL0GzrjhjZHr0mwbwgPitMJ3Z20hVmYHQciz6rm/image.png', withPhoto: true, columns: 1 },
+  { id: 2, title: 'Template 2', image: 'https://www.myperfectresume.com/wp-content/uploads/2024/03/aeronautical-engineer-resume-format.svg', withPhoto: false, columns: 2 },
+  { id: 3, title: 'Template 3', image: 'https://cdn-images.zety.com/pages/resume_formats_template_nanica.png', withPhoto: true, columns: 2 },
+  { id: 4, title: 'Template 4', image: 'https://images.squarespace-cdn.com/content/v1/5a0a3c9a8fd4d276810a8a9e/1698864127374-OJCFKLMY3BXCXFUO8WK6/Resume-Template-10-pdf.png', withPhoto: false, columns: 1 },
+  { id: 5, title: 'Template 5', image: 'https://www.hubspot.com/hs-fs/hubfs/resume-templates-word_24.webp?width=415&height=536&name=resume-templates-word_24.webp', withPhoto: true, columns: 1 },
+  { id: 6, title: 'Template 6', image: 'https://cdn.enhancv.com/predefined-examples/DuL0GzrjhjZHr0mwbwgPitMJ3Z20hVmYHQciz6rm/image.png', withPhoto: false, columns: 2 },
 ];
 
 const colors = ['#e74c3c', '#3498db', '#2ecc71', '#9b59b6', '#f39c12', '#1abc9c', '#8e44ad', '#d35400'];
