@@ -1,10 +1,10 @@
-// Preview.js
 import React from 'react';
 import jsPDF from 'jspdf';
+import axios from 'axios'; // Import axios for API calls
 import './Form.css';
 
 const Preview = ({ formData, onEdit }) => {
-  const handleDownload = () => {
+  const handleDownload = async () => {
     // Initialize jsPDF instance
     const doc = new jsPDF();
 
@@ -85,6 +85,15 @@ const Preview = ({ formData, onEdit }) => {
 
     // Save the PDF
     doc.save('resume.pdf');
+
+    // Send formData to backend
+    try {
+      await axios.post('http://localhost:3000/api/resumes', formData);
+      console.log("Resume data saved successfully.");
+    } catch (error) {
+      console.error("Error saving resume data:", error);
+      // Handle error if needed
+    }
   };
 
   return (
