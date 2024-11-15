@@ -18,21 +18,31 @@ const Preview = ({ formData, onEdit }) => {
 
     // Personal Details
     doc.text('Personal Details:', 10, 30);
-    doc.text(`Name: ${formData.personalInfo.name || 'N/A'}`, 10, 40);
-    doc.text(`Email: ${formData.personalInfo.email || 'N/A'}`, 10, 50);
-    doc.text(`Phone: ${formData.personalInfo.phone || 'N/A'}`, 10, 60);
+    doc.text(`First Name: ${formData.personalDetails.firstName || 'N/A'}`, 10, 40);
+    doc.text(`Last Name: ${formData.personalDetails.lastName || 'N/A'}`, 10, 50);
+    doc.text(`Profession: ${formData.personalDetails.profession || 'N/A'}`, 10, 60);
+    doc.text(`City: ${formData.personalDetails.city || 'N/A'}`, 10, 70);
+    doc.text(`State: ${formData.personalDetails.state || 'N/A'}`, 10, 80);
+    doc.text(`Country: ${formData.personalDetails.country || 'N/A'}`, 10, 90);
+    doc.text(`Zip Code: ${formData.personalDetails.zipCode || 'N/A'}`, 10, 100);
+    doc.text(`Phone: ${formData.personalDetails.phone || 'N/A'}`, 10, 110);
+    doc.text(`Email: ${formData.personalDetails.email || 'N/A'}`, 10, 120);
 
-    let yOffset = 70;
+    let yOffset = 130;
 
     // Education Details
     doc.text('Education:', 10, yOffset);
     if (Array.isArray(formData.education) && formData.education.length > 0) {
       formData.education.forEach((edu, index) => {
         yOffset += 10;
-        doc.text(`Degree: ${edu.degree || 'N/A'}`, 10, yOffset);
-        doc.text(`Institution: ${edu.institution || 'N/A'}`, 10, yOffset + 10);
-        doc.text(`Year: ${edu.year || 'N/A'}`, 10, yOffset + 20);
-        yOffset += 30;
+        doc.text(`School Name: ${edu.schoolName}`, 10, yOffset);
+        doc.text(`Location: ${edu.location}`, 10, yOffset + 10);
+        doc.text(`Degree: ${edu.degree}`, 10, yOffset + 20);
+        doc.text(`Start Year: ${edu.startYear}`, 10, yOffset + 30);
+        doc.text(`End Year: ${edu.endYear}`, 10, yOffset + 40);
+        doc.text(`Field of Study: ${edu.fieldOfStudy}`, 10, yOffset + 50);
+        doc.text(`Description: ${edu.description}`, 10, yOffset + 60);
+        yOffset += 70;
       });
     } else {
       doc.text('No education details added yet.', 10, yOffset + 10);
@@ -40,16 +50,18 @@ const Preview = ({ formData, onEdit }) => {
 
     yOffset += 20;
 
+
     // Experience Details
-    doc.text('Experience:', 10, yOffset);
+   doc.text('Experience:', 10, yOffset);
     if (Array.isArray(formData.experience) && formData.experience.length > 0) {
       formData.experience.forEach((exp, index) => {
         yOffset += 10;
-        doc.text(`Title: ${exp.title || 'N/A'}`, 10, yOffset);
-        doc.text(`Company: ${exp.company || 'N/A'}`, 10, yOffset + 10);
-        doc.text(`Duration: ${exp.duration || 'N/A'}`, 10, yOffset + 20);
-        doc.text(`Description: ${exp.description || 'N/A'}`, 10, yOffset + 30);
-        yOffset += 40;
+        doc.text(`Job Title: ${exp.jobTitle}`, 10, yOffset);
+        doc.text(`Company: ${exp.company}`, 10, yOffset + 10);
+        doc.text(`Start Year: ${exp.startYear}`, 10, yOffset + 20);
+        doc.text(`End Year: ${exp.endYear}`, 10, yOffset + 30);
+        doc.text(`Description: ${exp.description}`, 10, yOffset + 40);
+        yOffset += 50;
       });
     } else {
       doc.text('No experience added yet.', 10, yOffset + 10);
@@ -57,8 +69,9 @@ const Preview = ({ formData, onEdit }) => {
 
     yOffset += 20;
 
+
     // Skills
-    doc.text('Skills:', 10, yOffset);
+     doc.text('Skills:', 10, yOffset);
     if (Array.isArray(formData.skills) && formData.skills.length > 0) {
       formData.skills.forEach((skill, index) => {
         yOffset += 10;
@@ -122,63 +135,70 @@ const Preview = ({ formData, onEdit }) => {
     <div className="preview-container">
       <h2>Resume Preview</h2>
 
-      {/* Personal Info Section */}
       <section className="personal-details">
         <h3>Personal Details</h3>
-        <p><strong>Name:</strong> {formData.personalInfo.name || 'N/A'}</p>
-        <p><strong>Email:</strong> {formData.personalInfo.email || 'N/A'}</p>
-        <p><strong>Phone:</strong> {formData.personalInfo.phone || 'N/A'}</p>
+        <p><strong>First Name:</strong> {formData.personalDetails.firstName || 'N/A'}</p>
+        <p><strong>Last Name:</strong> {formData.personalDetails.lastName || 'N/A'}</p>
+        <p><strong>Profession:</strong> {formData.personalDetails.profession || 'N/A'}</p>
+        <p><strong>City:</strong> {formData.personalDetails.city || 'N/A'}</p>
+        <p><strong>State:</strong> {formData.personalDetails.state || 'N/A'}</p>
+        <p><strong>Country:</strong> {formData.personalDetails.country || 'N/A'}</p>
+        <p><strong>Zip Code:</strong> {formData.personalDetails.zipCode || 'N/A'}</p>
+        <p><strong>Phone:</strong> {formData.personalDetails.phone || 'N/A'}</p>
+        <p><strong>Email:</strong> {formData.personalDetails.email || 'N/A'}</p>
       </section>
 
-      {/* Education Section */}
-      <section className="education-details">
+      {/* Education */}
+      <section className="education">
         <h3>Education</h3>
-        {Array.isArray(formData.education) && formData.education.length > 0 ? (
+        {formData.education?.length ? (
           formData.education.map((edu, index) => (
-            <div key={index} className="education-item">
-              <p><strong>Degree:</strong> {edu.degree || 'N/A'}</p>
-              <p><strong>Institution:</strong> {edu.institution || 'N/A'}</p>
-              <p><strong>Year:</strong> {edu.year || 'N/A'}</p>
+            <div key={index}>
+              <p><strong>School:</strong> {edu.schoolName}</p>
+              <p><strong>Degree:</strong> {edu.degree}</p>
+              <p><strong>Field of Study:</strong> {edu.fieldOfStudy}</p>
+              <p><strong>Years:</strong> {edu.startYear} - {edu.endYear}</p>
+              <p><strong>Description:</strong> {edu.description}</p>
             </div>
           ))
         ) : (
-          <p>No education details added yet.</p>
+          <p>No education details added.</p>
         )}
       </section>
 
-      {/* Experience Section */}
-      <section className="experience-details">
+     {/* Experience */}
+     <section className="experience">
         <h3>Experience</h3>
-        {Array.isArray(formData.experience) && formData.experience.length > 0 ? (
+        {formData.experience?.length ? (
           formData.experience.map((exp, index) => (
-            <div key={index} className="experience-item">
-              <p><strong>Title:</strong> {exp.title || 'N/A'}</p>
-              <p><strong>Company:</strong> {exp.company || 'N/A'}</p>
-              <p><strong>Duration:</strong> {exp.duration || 'N/A'}</p>
-              <p><strong>Description:</strong> {exp.description || 'N/A'}</p>
+            <div key={index}>
+              <p><strong>Job Title:</strong> {exp.jobTitle}</p>
+              <p><strong>Company:</strong> {exp.company}</p>
+              <p><strong>Years:</strong> {exp.startYear} - {exp.endYear}</p>
+              <p><strong>Description:</strong> {exp.description}</p>
             </div>
           ))
         ) : (
-          <p>No experience added yet.</p>
+          <p>No experience added.</p>
         )}
       </section>
 
-      {/* Skills Section */}
-      <section className="skills-details">
+      {/* Skills */}
+      <section className="skills">
         <h3>Skills</h3>
-        {Array.isArray(formData.skills) && formData.skills.length > 0 ? (
+        {formData.skills?.length ? (
           <ul>
             {formData.skills.map((skill, index) => (
               <li key={index}>{skill}</li>
             ))}
           </ul>
         ) : (
-          <p>No skills added yet.</p>
+          <p>No skills added.</p>
         )}
       </section>
 
-      {/* Summary Section */}
-      <section className="summary-details">
+      {/* Summary */}
+      <section className="summary">
         <h3>Summary</h3>
         <p>{formData.summary || 'No summary provided.'}</p>
       </section>
