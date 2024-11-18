@@ -1,0 +1,85 @@
+/* Style for Contact List container */
+.contact-container {
+    height: 1200px;
+    width: 850px;
+   
+    margin: 90px auto 0 auto;
+    
+    
+ 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+ .coverlettermain-container-flex{
+    display: flex;
+    border: 1px solid white;
+    background: rgb(234, 233, 233);
+
+ }
+  ul {
+    list-style-type: none;
+    padding-left: 0; /* Removes default left padding */
+  }
+  .Coverletter-contact-h2{
+    margin-top: -20px;
+
+  }
+  
+  /* Style for the contact name */
+  .Coverletter-contact-h1 {
+    font-size: 40px;
+    align-items: center;
+    margin-left: 4%;
+  
+    color: #090909;
+  }
+  
+  /* Style for the contact details section */
+  .contact-details {
+    margin-top: 20px;
+  }
+  
+  .contact-details h3 {
+    margin-left: 2px;
+    margin-bottom: -4px;
+    
+  }
+  
+  .contact-details hr {
+    width: 180px;
+    margin-left: 2px;
+  }
+  
+  .contact-details strong {
+    font-weight: bold;
+  }
+  .recipientcontents-name{
+  
+    margin-left: 20px;
+  }
+  .subject-of templ1{
+    margin-top: 140px;
+  }
+  .opening-texts-section{
+    width: fit-content;
+    padding: 0 70px;
+    margin-left: -17px;
+  }
+  .contacts-section{
+    border: 1px solid blue;
+ 
+    padding-bottom: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: blue;
+    color: white;
+  }
+  .letter-body-section{
+    text-align: justify;
+    width: fit-content;
+    
+  }
+  .conclusion-section{
+    text-align: justify;
+    width: fit-content;
+  }

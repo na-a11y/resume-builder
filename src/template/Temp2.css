@@ -1,0 +1,91 @@
+/* Container for the whole cover letter */
+.cover-letter-container-temp2 {
+    width: 650px; 
+    margin: 0 auto;
+    padding: 20px 90px;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    border: 1px solid red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main wrapper for all sections */
+  .coverlettermain-container-temp2 {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  /* Title styling for each section */
+
+  h2,
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the contact details section */
+  .contact-details-temp2 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .contact-details-temp2 strong {
+    font-weight: bold;
+  }
+  
+  /* Styling for sections with lists (subjects, recipients, opening texts, etc.) */
+  ul {
+    padding-left: 20px;
+    list-style-type: none;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for subject, recipient, opening text, and conclusion sections */
+  .subjects-section-temp2 li,
+  .recipients-section-temp2 li,
+  .opening-texts-section-temp2 li {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .letter-body-section-temp2 p,
+  .conclusion-section-temp2 p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  /* Loading and error states */
+  .loading {
+    font-size: 18px;
+    font-style: italic;
+    color: #999;
+  }
+  
+  .error {
+    color: #d9534f;
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  /* Sincerely section styling */
+  .sincerely-section-temp2 p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .cover-letter-container-temp2 {
+      width: 100%; /* Make container full width on smaller screens */
+      padding: 10px;
+    }
+  }
+  
